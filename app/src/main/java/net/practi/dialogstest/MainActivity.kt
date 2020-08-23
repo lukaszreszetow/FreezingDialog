@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         loadingDialog = LoadingIndicatorDialog(this, WeakReference(this))
 
         startBT.setOnClickListener {
+            Log.d("Testing", "Start clicked")
             vm.start()
         }
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 CODE -> {
-                    Log.d("Is Loading visible", "${loadingDialog.isShowing}")
+                    Log.d("Testing", "is loading dialog showing? ${loadingDialog.isShowing}")
                     loadingDialog.hide()
                 }
                 else -> {

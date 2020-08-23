@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -44,13 +45,13 @@ class LoadingIndicatorDialog(
     }
 
     override fun show() {
-        logDebugWithObjectRefs("Show called")
+        Log.d("Testing", "LoadingDialogView - Show called")
         super.show()
     }
 
 
     override fun hide() {
-        logDebugWithObjectRefs("Hide called")
+        Log.d("Testing", "LoadingDialogView - Hide called")
         super.hide()
     }
 
