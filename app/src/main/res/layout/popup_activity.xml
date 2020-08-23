@@ -6,12 +6,21 @@
     android:layout_height="600dp"
     android:layout_gravity="center"
     android:background="#FFFFFF"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/closeScreen"
+        android:id="@+id/closeWithoutResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Close" />
+        android:layout_marginBottom="20dp"
+        android:text="Close without result" />
+
+
+    <Button
+        android:id="@+id/closeWithResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close with result" />
 
 </LinearLayout>

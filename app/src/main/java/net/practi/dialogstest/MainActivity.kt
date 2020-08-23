@@ -1,7 +1,9 @@
 package net.practi.dialogstest
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -34,8 +36,28 @@ class MainActivity : AppCompatActivity() {
 
         vm.startActivity.observe(this, Observer {
             if (it) {
-                startActivity(Intent(this, DialogActivity::class.java))
+                startActivityForResult(Intent(this, DialogActivity::class.java), CODE)
             }
         })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                CODE -> {
+                    Log.d("Is Loading visible", "${loadingDialog.isShowing}")
+                    loadingDialog.hide()
+                }
+                else -> {
+                    super.onActivityResult(requestCode, resultCode, data)
+                }
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    companion object {
+        const val CODE = 1
     }
 }

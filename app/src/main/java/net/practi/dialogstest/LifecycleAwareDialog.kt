@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference
 
 abstract class LifecycleAwareDialog(
     context: Context,
-    protected val dialogOwner: WeakReference<LifecycleOwner>
+    private val dialogOwner: WeakReference<LifecycleOwner>
 ) : AppCompatDialog(context), LifecycleOwner {
 
     private val dialogOwnerName = dialogOwner.get()?.toString()
